@@ -17,9 +17,6 @@ appsettings.Production.json
 
 ## Dependencies
 node_modules/
-wwwroot/lib/
-*.min.css
-*.min.js
 
 ## Logs
 *.log
@@ -45,15 +42,6 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
-
-## Visual Studio for Mac
-.vscode/
-.idea/
-*.sln.iml
-
-## Rider
-.idea/
-*.sln.iml
 
 ## User-specific files
 *.rsuser
