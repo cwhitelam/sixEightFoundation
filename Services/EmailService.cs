@@ -82,7 +82,7 @@ namespace SixEightFoundation.Services
         </div>
         <div class='content'>
             <div class='timestamp'>
-                {DateTime.Now.ToString("MMMM dd, yyyy 'at' h:mm tt")}
+                {DateTime.UtcNow.AddHours(-5).ToString("MMMM dd, yyyy 'at' h:mm tt")} EST
             </div>
             <div class='field'>
                 <span class='label'>From:</span><br/>
