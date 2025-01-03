@@ -1,0 +1,86 @@
+.about {
+    padding: 80px 0 40px;
+    background-color: #f3f5fa;
+}
+
+.about h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    position: relative;
+    color: #37517e;
+}
+
+.about h3::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #5c9f24;
+    bottom: 0;
+    left: 0;
+}
+
+.about p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444444;
+}
+
+.about .mission-statement {
+    font-style: italic;
+    padding: 15px;
+    background: #fff;
+    border-left: 3px solid #5c9f24;
+    margin: 15px 0;
+}
+
+.about ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.about ul li {
+    padding: 8px 0 8px 28px;
+    position: relative;
+}
+
+.about ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    color: #5c9f24;
+    font-weight: bold;
+}
+
+.about img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 60px 0 30px;
+    }
+
+    .about img {
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+
+    .about h3 {
+        font-size: 24px;
+        margin-top: 15px;
+    }
+
+    .about .mission-statement {
+        margin: 12px 0;
+        padding: 12px;
+    }
+}

@@ -1,0 +1,66 @@
+@inject IJSRuntime JSRuntime
+
+<header id="header">
+    <div class="container d-flex align-items-center">
+        <h1 class="logo">
+            <a href="#" @onclick="ScrollToTop" @onclick:preventDefault>
+                <span class="i">I</span>
+                <span class="numbers">6:8</span>
+                <span class="foundation">Foundation</span>
+            </a>
+        </h1>
+
+        <nav id="navbar" class="navbar @(isNavbarCollapsed ? "" : "navbar-mobile show")">
+            <ul>
+                <li><a href="#hero" class="@(currentSection == "hero" ? "active" : "")" @onclick='@(() => ScrollToSection("hero"))' @onclick:preventDefault>Home</a></li>
+                <li><a href="#about" class="@(currentSection == "about" ? "active" : "")" @onclick='@(() => ScrollToSection("about"))' @onclick:preventDefault>About</a></li>
+                <li><a href="#contact" class="@(currentSection == "contact" ? "active" : "")" @onclick='@(() => ScrollToSection("contact"))' @onclick:preventDefault>Contact</a></li>
+                <li><a href="#support" class="@(currentSection == "support" ? "active" : "")" @onclick='@(() => ScrollToSection("support"))' @onclick:preventDefault>Support Us</a></li>
+                <li><a href="#donate" class="donate-btn" @onclick='@(() => ScrollToSection("donate"))' @onclick:preventDefault>Donate</a></li>
+            </ul>
+        </nav>
+        <i class="bi bi-list mobile-nav-toggle" @onclick="ToggleNavbar"></i>
+    </div>
+</header>
+
+@code {
+    private bool isNavbarCollapsed = true;
+    private string currentSection = "hero";
+
+    private async Task ScrollToSection(string sectionId)
+    {
+        await JSRuntime.InvokeVoidAsync("scrollToSection", sectionId);
+        currentSection = sectionId;
+        isNavbarCollapsed = true;
+    }
+
+    private async Task ScrollToTop()
+    {
+        await JSRuntime.InvokeVoidAsync("scrollToTop");
+        currentSection = "hero";
+    }
+
+    private void ToggleNavbar()
+    {
+        isNavbarCollapsed = !isNavbarCollapsed;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("eval", @"
+                window.scrollToSection = function(sectionId) {
+                    const element = document.getElementById(sectionId);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                };
+
+                window.scrollToTop = function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                };
+            ");
+        }
+    }
+}

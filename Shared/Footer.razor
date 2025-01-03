@@ -1,0 +1,23 @@
+@inject IJSRuntime JSRuntime
+
+<footer id="footer">
+    <div class="footer-content">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="footer-info">
+                    <span class="copyright">© 2024 I 6:8 Foundation. All rights reserved.</span>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:contact@i68foundation.org">contact@i68foundation.org</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+@code {
+    private async Task ScrollToSection(string sectionId)
+    {
+        await JSRuntime.InvokeVoidAsync("scrollToSection", sectionId);
+    }
+}

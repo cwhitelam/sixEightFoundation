@@ -1,0 +1,130 @@
+@inject IJSRuntime JSRuntime
+
+<section id="hero" class="d-flex align-items-center justify-content-center">
+    <img src="assets/img/groupPhoto.jpeg" class="hero-bg" alt="I 6:8 Foundation Group Photo" />
+    <div class="container position-relative text-center">
+        <h1>I 6:8 Foundation</h1>
+        <div class="divider"></div>
+        <h2>Empowering Recovery, Inspiring Hope</h2>
+    </div>
+</section>
+
+<style>
+    #hero {
+        width: 100%;
+        height: 75vh;
+        position: relative;
+        background: #37517e;
+        overflow: hidden;
+    }
+
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.3;
+        z-index: 1;
+    }
+
+    #hero .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    #hero h1 {
+        margin: 0;
+        font-size: 56px;
+        font-weight: 800;
+        line-height: 1.2;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        animation: fadeInDown 1s ease-out;
+    }
+
+    .divider {
+        width: 80px;
+        height: 4px;
+        background: #5c9f24;
+        margin: 25px auto;
+        position: relative;
+    }
+
+    .divider::before {
+        content: '';
+        position: absolute;
+        left: -20px;
+        top: 0;
+        width: 20px;
+        height: 4px;
+        background: #5c9f24;
+        opacity: 0.5;
+    }
+
+    .divider::after {
+        content: '';
+        position: absolute;
+        right: -20px;
+        top: 0;
+        width: 20px;
+        height: 4px;
+        background: #5c9f24;
+        opacity: 0.5;
+    }
+
+    #hero h2 {
+        color: rgba(255, 255, 255, 0.95);
+        margin: 10px 0 0 0;
+        font-size: 28px;
+        font-weight: 400;
+        font-style: italic;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        animation: fadeInUp 1s ease-out;
+    }
+
+    @@keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@media (max-width: 768px) {
+        #hero {
+            height: 100vh;
+        }
+
+        #hero h1 {
+            font-size: 40px;
+            letter-spacing: 1px;
+        }
+
+        #hero h2 {
+            font-size: 22px;
+        }
+
+        .divider {
+            width: 60px;
+            margin: 20px auto;
+        }
+    }
+</style>

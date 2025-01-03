@@ -1,0 +1,58 @@
+﻿/* Import component styles */
+@import url('components/header.css');
+@import url('components/hero.css');
+@import url('components/about.css');
+@import url('components/contact.css');
+@import url('components/footer.css');
+
+/* Global styles */
+html,
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+h1:focus {
+    outline: none;
+}
+
+/* Common utility classes */
+.section-padding {
+    padding: 60px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Common section styles */
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.section-bg {
+    background-color: #f8f9fa;
+}
+
+/* Blazor Error UI */
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
