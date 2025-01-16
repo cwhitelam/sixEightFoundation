@@ -12,8 +12,9 @@ obj/
 
 ## Environment files
 .env
-appsettings.Development.json
-appsettings.Production.json
+appsettings.json
+appsettings.*.json
+wwwroot/appsettings.json
 
 ## Dependencies
 node_modules/
