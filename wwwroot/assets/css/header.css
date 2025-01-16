@@ -1,0 +1,134 @@
+#header {
+    background: rgba(40, 58, 90, 0.9);
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 10px 0;
+    height: 60px;
+}
+
+.logo {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.logo a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-img {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+}
+
+.navbar {
+    margin-left: auto;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 30px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    white-space: nowrap;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.navbar a:hover,
+.navbar .active {
+    color: #47b2e4;
+}
+
+.navbar .donate-btn {
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    border: 2px solid #5c9f24;
+    font-weight: 600;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.navbar .donate-btn:hover {
+    background: #5c9f24;
+    color: #fff;
+}
+
+.mobile-nav-toggle {
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.5s;
+}
+
+@media (max-width: 991px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+    }
+
+    .navbar-mobile {
+        position: fixed;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(40, 58, 90, 0.9);
+        transition: 0.3s;
+        z-index: 999;
+    }
+
+    .navbar-mobile.show ul {
+        display: block;
+        position: absolute;
+        top: 55px;
+        right: 15px;
+        bottom: 15px;
+        left: 15px;
+        padding: 10px 0;
+        border-radius: 10px;
+        background-color: #fff;
+        overflow-y: auto;
+        transition: 0.3s;
+    }
+
+    .navbar-mobile a {
+        padding: 10px 20px;
+        font-size: 15px;
+        color: #37517e;
+    }
+
+    .navbar-mobile .donate-btn {
+        margin: 15px 20px;
+        display: block;
+        text-align: center;
+    }
+}
